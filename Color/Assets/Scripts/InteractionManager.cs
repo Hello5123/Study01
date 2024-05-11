@@ -41,16 +41,25 @@ public class InteractionManager : MonoBehaviour
                 if(hit.collider.gameObject != curInteractableobject)
                 {
                     curInteractableobject = hit.collider.gameObject;
-                    curInteractable = hit. collider.gameObject.GetComponent<IInteractable>();
-                    SetPrompText();
+                    curInteractable = hit.collider.GetComponent<IInteractable>();
+                    SetPromptText();
+                }
+            }
+            else
+            {
+                curInteractableobject = null;
+                curInteractable = null;
+                if (prompText != null)
+                {
+                    prompText.gameObject.SetActive(false);
                 }
             }
         }
     }
-
-    private void SetPrompText()
+    
+    private void SetPromptText()
     {
         prompText.gameObject.SetActive(true);
-        prompText.text = string.Format("<b>[E]<b> {}", curInteractable.PopUpUI());
+        prompText.text = string.Format("<b>[E]<b> {0}", curInteractable.PopUpUI());
     }
 }

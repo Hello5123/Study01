@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour, IInteractable
 {
-    public ItemData ItemData;
+    public ItemData itemData;
     public void PickUp()
     {
         gameObject.SetActive(false);
@@ -17,6 +17,6 @@ public class Item : MonoBehaviour, IInteractable
 
     public string PopUpUI()
     {
-        return string.Format("Pick Up: {}", ItemData.Name);
+        return string.Format("Pick Up: {0}", itemData.Name);
     }
 }
