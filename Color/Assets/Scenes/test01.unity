@@ -571,6 +571,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   prompText: {fileID: 0}
+  UnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1409473417
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +719,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   prompText: {fileID: 70118879}
+  UnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1837239357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +736,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sensitivity: 2
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1841703680
 GameObject:
   m_ObjectHideFlags: 0

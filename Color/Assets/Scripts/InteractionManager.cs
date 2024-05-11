@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine.UIElements;
 using Unity.Properties;
 using System;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public interface IInteractable
 {
@@ -22,6 +24,8 @@ public class InteractionManager : MonoBehaviour
 
     public TextMeshProUGUI prompText;
     private Camera cam;
+
+    public UnityEvent UnityEvent;
 
     private void Start()
     {
@@ -56,7 +60,16 @@ public class InteractionManager : MonoBehaviour
             }
         }
     }
-    
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started && curInteractable != null)
+        {
+            curInteractable.PopDownUI();
+            curInteractableobject = null;
+            curInteractable = null;
+            prompText.gameObject.SetActive(false);
+        }
+    }
     private void SetPromptText()
     {
         prompText.gameObject.SetActive(true);

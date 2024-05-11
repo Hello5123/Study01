@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
@@ -7,7 +8,8 @@ public class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
     private Camera eyes;
-
+    public UnityEvent unityEvent;
+    
     void Start()
     {
         eyes = GetComponentInChildren<Camera>();
@@ -18,6 +20,11 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Watch();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Dd");
+            unityEvent.Invoke();
+        }
     }
 
     private void Watch()
@@ -36,4 +43,5 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.right * horizontal + transform.forward * vertical;
         transform.position += moveDirection * speed * Time.deltaTime;
     }
+
 }
