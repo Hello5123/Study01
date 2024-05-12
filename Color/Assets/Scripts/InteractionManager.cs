@@ -75,4 +75,14 @@ public class InteractionManager : MonoBehaviour
         prompText.gameObject.SetActive(true);
         prompText.text = string.Format("<b>[E]<b> {0}", curInteractable.PopUpUI());
     }
+    public void PressE()
+    {
+        if(curInteractable != null)
+        {
+            curInteractable.PopDownUI();
+            curInteractableobject = null;
+            curInteractable = null;
+            prompText.gameObject.SetActive(false);
+        }
+    }
 }

@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
         Watch();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Dd");
             unityEvent.Invoke();
         }
     }
@@ -43,5 +42,8 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.right * horizontal + transform.forward * vertical;
         transform.position += moveDirection * speed * Time.deltaTime;
     }
+    void eat()
+    {
 
+    }
 }
