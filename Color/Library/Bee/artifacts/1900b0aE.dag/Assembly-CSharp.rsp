@@ -396,6 +396,7 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerStateController.cs"
 "Assets/Scripts/Slot.cs"
+"Assets/Scripts/test02.cs"
 -langversion:9.0
 /deterministic
 /optimize+
