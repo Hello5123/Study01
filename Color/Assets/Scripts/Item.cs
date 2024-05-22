@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Item : MonoBehaviour, IInteractable
 {
     public ItemData itemData;
+    public UnityAction unityAction;
     public void PickUp()
     {
         gameObject.SetActive(false);
@@ -12,6 +14,7 @@ public class Item : MonoBehaviour, IInteractable
 
     public void PopDownUI()
     {
+        ItemInventory.Instance.AddItem(this);
         Destroy(gameObject);
     }
 

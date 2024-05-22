@@ -7,7 +7,7 @@ public class test02 : MonoBehaviour
     [Header("ItemSlot")]
     [SerializeField]
     private GameObject ItemSlot;
-    public int Gan = 160;
+    private int Gan = 170;
     public int _verticalSlotCount, _horizontalSlotCount;
     private List<ItemSlotUI> _slotUIList;
     private RectTransform _contentAreaRT;
